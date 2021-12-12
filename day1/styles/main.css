@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Montserrat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Montserrat-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Book';
+  src: url('../assets/fonts/BebasNeue-Book.woff2') format('woff2'),
+    url('../assets/fonts/BebasNeue-Book.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Colors */
+
+:root {
+  --background-color: #2B2A30;
+  --continue-color: #9d0000;
+  --stop-color: #00aa51;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  align-items: center;
+  background-color: var(--background-color, #456);
+  color: #fff;
+  display: flex;
+  font-family: 'Bebas Neue Book', Arial, sans-serif;
+  font-size: 1.4rem;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {}
+
+.circle {
+  box-shadow: 0px 0px 30px 10px rgb(255 255 255 / 5%);
+
+  align-items: center;
+  border-radius: 50%;
+  border: 8px solid var(--continue-color, maroon);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+}
+
+.timer {
+  font-size: 7rem;
+  margin: 60px 0 30px;
+}
+
+.power {
+  font-family: Montserrat, serif;
+  font-size: 1rem;
+  margin-block-end: 20px;
+  text-transform: uppercase;
+}
+
+.settings {
+  cursor: pointer;
+  opacity: 0.5;
+}

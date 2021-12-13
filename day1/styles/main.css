@@ -91,6 +91,19 @@ body {
   text-align: center;
 }
 
+.inputTime .close {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.8rem;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+}
+
 .circle {
   align-items: center;
   border-radius: 50%;
@@ -118,6 +131,10 @@ body {
 }
 
 .settings {
+  background-size: cover;
+  background: url('./../assets/images/gear.svg');
   cursor: pointer;
+  height: 30px;
   opacity: 0.5;
+  width: 30px;
 }

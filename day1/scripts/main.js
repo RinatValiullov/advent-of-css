@@ -24,6 +24,14 @@ power.addEventListener("click", getSeconds);
 
 const inputTime = document.querySelector(".inputTime");
 
-settings.addEventListener("click", (event) => {
-  inputTime.classList.toggle("active");
+document.documentElement.addEventListener("click", (event) => {
+  // inputTime.classList.remove("active");
+  if (event.target.className === "settings") {
+    inputTime.classList.add("active");
+  } else if (
+    event.target.className === "close" &&
+    event.target.className !== "inputTime"
+  ) {
+    inputTime.classList.remove("active");
+  }
 });

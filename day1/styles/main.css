@@ -62,14 +62,41 @@ body {
   margin: 0;
 }
 
-.container {}
+.container {
+  position: relative;
+}
+
+.inputTime {
+  align-items: center;
+  background-color: #fff;
+  color: #456;
+  display: none;
+  font-family: Montserrat, serif;
+  font-size: 1rem;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
+
+.inputTime.active {
+  display: flex;
+}
+
+.inputTime label {
+  text-align: center;
+}
 
 .circle {
-  box-shadow: 0px 0px 30px 10px rgb(255 255 255 / 5%);
-
   align-items: center;
   border-radius: 50%;
-  border: 8px solid var(--continue-color, maroon);
+  /* border: 8px solid var(--continue-color, maroon); */
+  border: 8px solid transparent;
+  box-shadow: 0px 0px 30px 10px rgb(255 255 255 / 5%);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -78,14 +105,15 @@ body {
 }
 
 .timer {
-  font-size: 7rem;
-  margin: 60px 0 30px;
+  font-size: 6rem;
+  margin: 80px 0 40px;
 }
 
 .power {
   font-family: Montserrat, serif;
-  font-size: 1rem;
-  margin-block-end: 20px;
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  margin-block-end: 30px;
   text-transform: uppercase;
 }
 

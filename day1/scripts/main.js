@@ -3,8 +3,9 @@ const power = document.querySelector('.power');
 const settings = document.querySelector('.settings');
 
 const inputTime = document.querySelector('.inputTime');
+const setTime = document.querySelector('.setTime');
 
-const getSeconds = () => {
+const getSeconds = (data) => {
   let matchTimeStr = timer.innerHTML.trim().match(/\d+/g);
   let matchTimeNum = matchTimeStr.map((digit) => parseInt(digit, 10));
   let seconds = matchTimeNum
@@ -18,11 +19,29 @@ const getSeconds = () => {
       return sec;
     })
     .reduce((acc, curr) => acc + curr, 0);
-
   return seconds;
 };
 
-power.addEventListener('click', getSeconds);
+const countTime = () => {
+  timeInSeconds = getSeconds();
+
+  let timerId = setInterval(function () {
+    let seconds = timeInSeconds % 60;
+    let minutes = (timeInSeconds / 60) % 60;
+
+    if (timeInSeconds <= 0) {
+      clearInterval(timerId);
+      timer.innerHTML = `<span class="elapsed">Time elapsed</span>`;
+    } else {
+      let strTimer = `${Math.trunc(minutes)}:${seconds}`;
+      timer.innerHTML = strTimer;
+    }
+
+    --timeInSeconds;
+  }, 200);
+};
+
+power.addEventListener('click', countTime);
 
 document.addEventListener('click', (event) => {
   if (event.target.className === 'settings') {
@@ -33,4 +52,17 @@ document.addEventListener('click', (event) => {
   ) {
     inputTime.classList.remove('active');
   }
+});
+
+setTime.addEventListener('change', (event) => {
+  let newTime = parseInt(event.target.value, 10);
+
+  if (newTime.toString().length < 2) {
+    timer.innerHTML = `<span>0${newTime}:00</span>`;
+  } else {
+    timer.innerHTML = `<span>${newTime}:00</span>`;
+  }
+
+  setTime.value = '';
+  inputTime.classList.remove('active');
 });

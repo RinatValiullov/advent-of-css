@@ -33,6 +33,7 @@
   --stop-color: #00aa51;
 }
 
+/* Colors */
 
 html {
   box-sizing: border-box;
@@ -60,6 +61,11 @@ body {
   height: 100vh;
   justify-content: center;
   margin: 0;
+  /* position: relative; */
+}
+
+.elapsed {
+  font-size: 3rem;
 }
 
 .container {

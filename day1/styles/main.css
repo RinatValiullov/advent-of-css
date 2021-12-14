@@ -61,11 +61,12 @@ body {
   height: 100vh;
   justify-content: center;
   margin: 0;
-  /* position: relative; */
 }
 
 .elapsed {
-  font-size: 3rem;
+  display: block;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .container {

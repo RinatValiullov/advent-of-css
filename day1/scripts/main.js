@@ -1,6 +1,8 @@
-const timer = document.querySelector(".timer");
-const power = document.querySelector(".power");
-const settings = document.querySelector(".settings");
+const timer = document.querySelector('.timer');
+const power = document.querySelector('.power');
+const settings = document.querySelector('.settings');
+
+const inputTime = document.querySelector('.inputTime');
 
 const getSeconds = () => {
   let matchTimeStr = timer.innerHTML.trim().match(/\d+/g);
@@ -20,18 +22,15 @@ const getSeconds = () => {
   return seconds;
 };
 
-power.addEventListener("click", getSeconds);
+power.addEventListener('click', getSeconds);
 
-const inputTime = document.querySelector(".inputTime");
-
-document.documentElement.addEventListener("click", (event) => {
-  // inputTime.classList.remove("active");
-  if (event.target.className === "settings") {
-    inputTime.classList.add("active");
+document.addEventListener('click', (event) => {
+  if (event.target.className === 'settings') {
+    inputTime.classList.add('active');
   } else if (
-    event.target.className === "close" &&
-    event.target.className !== "inputTime"
+    event.target.className === 'close' &&
+    event.target.className !== 'inputTime'
   ) {
-    inputTime.classList.remove("active");
+    inputTime.classList.remove('active');
   }
 });

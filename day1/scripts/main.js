@@ -31,12 +31,12 @@ const countTime = () => {
 
     if (timeInSeconds <= 0) {
       clearInterval(timerId);
-      timer.innerHTML = `<span class="elapsed">Time elapsed.<br>Update the page.</span>`;
+      timer.innerHTML = `<span class="elapsed">Time elapsed.<br>Set new time.</span>`;
     } else {
       if (seconds.toString().length < 2) {
         seconds = `0${seconds}`;
       }
-      let strTimer = `0${Math.trunc(minutes)}:${seconds}`;
+      let strTimer = `${Math.trunc(minutes)}:${seconds}`;
       timer.innerHTML = strTimer;
     }
 

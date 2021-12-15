@@ -114,7 +114,6 @@ body {
 .circle {
   align-items: center;
   border-radius: 50%;
-  /* border: 8px solid var(--continue-color, maroon); */
   border: 8px solid transparent;
   box-shadow: 0px 0px 30px 10px rgb(255 255 255 / 5%);
   display: flex;
@@ -138,9 +137,8 @@ body {
 }
 
 .settings {
-  background-size: cover;
   background: url('./../assets/images/gear.svg');
-  cursor: pointer;
+  background-size: cover;
   height: 30px;
   opacity: 0.5;
   width: 30px;

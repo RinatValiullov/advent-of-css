@@ -42,6 +42,7 @@ const countTime = () => {
 
     --timeInSeconds;
   }, 1000);
+  power.removeEventListener('click', countTime);
 };
 
 power.addEventListener('click', countTime);
@@ -49,10 +50,7 @@ power.addEventListener('click', countTime);
 document.addEventListener('click', (event) => {
   if (event.target.className === 'settings') {
     inputTime.classList.add('active');
-  } else if (
-    event.target.className === 'close' &&
-    event.target.className !== 'inputTime'
-  ) {
+  } else if (event.target.className === 'close') {
     inputTime.classList.remove('active');
   }
 });
